@@ -12,9 +12,11 @@ const Timer = () => {
   useEffect(()=>{
     let intervalId;
    
-    if (isRunning && time>0) {
+    if (isRunning && time>0 ) {
+      console.log("first")
        intervalId=setInterval(()=>{
         if(time==1){
+          console.log("first")
           clearInterval(intervalId)
           setisRunning(false)
         }
@@ -31,9 +33,9 @@ const Timer = () => {
   return (
     <div className='timerApp'>
       <shownum.Provider value={{time,setTime,isRunning,setisRunning}}>
-      <InputValue timecon={Math.floor(time/3600)}/><span className='colon'>:</span>
-      <InputValue timecon={Math.floor(time/60)}/><span className='colon'>:</span>
-      <InputValue timecon={time%60}/>
+      <InputValue timecon={parseInt(Math.floor(time/3600))}/><span className='colon'>:</span>
+      <InputValue timecon={parseInt(Math.floor(time/60))}/><span className='colon'>:</span>
+      <InputValue timecon={parseInt(time%60)}/>
       <Button/>
       <ResetButton/>
       
@@ -47,8 +49,9 @@ function InputValue({timecon}){
   const handleChange=(e)=>{
     setTime(parseInt(e.target.value))
   }
-return(
+return(<>
   <input type="number" onChange={handleChange} value={timecon}  className={'timeInput timeUnit'} />
+  </>
 )
 
 }
@@ -79,7 +82,7 @@ function ResetButton() {
     setTime(c=>c=0)
     setisRunning(c=>c=false)
   }
-  return<div style={{width:"100%"}}><button style={{textAlign:"center"}} className='actionButtons' onClick={reset} >Reset</button>
+  return<div><button style={{margin:"20px 100px"}} className='actionButtons' onClick={reset} >Reset</button>
 </div>
 }
 
