@@ -23,7 +23,11 @@ function InputValue(){
     setValue(e.target.value)
   }
 return(
-  <input   onChange={handleChange} value={value}  className={'timeInput timeUnit'} />
+  <input type="number"  style={{
+    appearance: 'textfield',
+    MozAppearance: 'textfield',
+    WebkitAppearance: 'none',
+  }}  onChange={handleChange} value={value}  className={'timeInput timeUnit'} />
 )
 
 }

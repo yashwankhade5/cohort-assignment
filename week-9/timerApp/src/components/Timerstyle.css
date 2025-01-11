@@ -93,14 +93,19 @@ body {
     background-color: #374151;
   }
  
-  .inputV{
-    margin-left: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
-  }
+ 
  .colon{
   font-size: 30px;
   margin: 11px;
   line-height: 1 ;
  }
+ .timeInput::-webkit-inner-spin-button,
+ .timeInput::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ .timeInput {
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none; /* Chrome, Safari, Edge */
+  appearance: none; /* Standard */
+}
