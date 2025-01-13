@@ -51,6 +51,7 @@ function calculateTimme(hr,min,sec) {
 function handlechange(e,unit) {
   const value= parseInt(e.target.value)
   if (unit==="hr") {
+    
     sethr(value)
     calculateTimme(value,min,sec)
   } else if(unit === "min"){
@@ -68,9 +69,9 @@ useEffect(()=>{
 },[time])
 
 return(<>
- <input type="number" value={hr} onChange={(e)=>{handlechange(e,'hr')}}className={'timeInput timeUnit'}/><span className='colon'>:</span>
-  <input type="number" value={min} onChange={(e)=>{handlechange(e,'min')}} className={'timeInput timeUnit'}/><span className='colon'>:</span>
-  <input type="number" value={sec} onChange={(e)=>{handlechange(e,'sec')}} className={'timeInput timeUnit'}/>
+ <input type="number" value={hr.toString().padStart(2,"0")} onChange={(e)=>{handlechange(e,'hr')}}className={'timeInput timeUnit'}/><span className='colon'>:</span>
+  <input type="number" value={min.toString().padStart(2,"0")} onChange={(e)=>{handlechange(e,'min')}} className={'timeInput timeUnit'}/><span className='colon'>:</span>
+  <input type="number" value={sec.toString().padStart(2,"0")} onChange={(e)=>{handlechange(e,'sec')}} className={'timeInput timeUnit'}/>
   </>
 )
 

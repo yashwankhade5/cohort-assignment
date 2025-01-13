@@ -5,7 +5,7 @@ import {shownum,ShowProvider} from "./Context"
 import { createContext } from 'react';
 
 export function TimerDisplay() {
-    const {time,setTime,isRunning,setisRunning}=useContext(shownum)
+    const {time,setTime,isRunning,setisRunning,seteditState}=useContext(shownum)
     const hr = Math.floor(time / 3600);
 const min = Math.floor((time % 3600) / 60);
 const sec = time % 60;
@@ -31,8 +31,11 @@ const sec = time % 60;
         }
     
       },[isRunning,time])
+      function editable(e) {
+        seteditState(r=>r=true)
+      }
       
-    return<div className="timerTime">
+    return<div onClick={editable} className="timerTime">
     {`${ hr.toString().padStart(2,"0") }:${ min.toString().padStart(2,"0") }:${sec.toString().padStart(2,"0")}`}
   </div>
 }
