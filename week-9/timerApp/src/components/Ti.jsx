@@ -20,9 +20,7 @@ const Ti = () => {
     </div>
   )
 }
-function Timer() {
- 
-}
+
 function Button(){
   const {setisRunning}=useContext(shownum)
   function start() {
