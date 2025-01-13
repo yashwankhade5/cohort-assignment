@@ -1,4 +1,4 @@
-import React,{useState,useContext, useEffect} from 'react'
+import React,{useState,useContext, useEffect, useRef} from 'react'
 
 import  "./Timerstyle.css";
 import { createContext } from 'react';
@@ -11,11 +11,10 @@ const Timer = () => {
  
   useEffect(()=>{
     let intervalId;
-   
     if (isRunning && time>0 ) {
       console.log("first")
        intervalId=setInterval(()=>{
-        if(time==1){
+        if(time===1){
           console.log("first")
           clearInterval(intervalId)
           setisRunning(false)
@@ -33,9 +32,7 @@ const Timer = () => {
   return (
     <div className='timerApp'>
       <shownum.Provider value={{time,setTime,isRunning,setisRunning}}>
-      <InputValue timecon={parseInt(Math.floor(time/3600))}/><span className='colon'>:</span>
-      <InputValue timecon={parseInt(Math.floor(time/60))}/><span className='colon'>:</span>
-      <InputValue timecon={parseInt(time%60)}/>
+      <InputValue/>
       <Button/>
       <ResetButton/>
       
@@ -44,13 +41,34 @@ const Timer = () => {
   )
 }
 
-function InputValue({timecon}){
- let {setTime}=useContext(shownum)
-  const handleChange=(e)=>{
-    setTime(parseInt(e.target.value))
+function InputValue(){
+ let {setTime,time}=useContext(shownum)
+ const [hr,sethr]=useState(Math.floor(time/3600))
+ const [min,setmin]=useState(Math.floor(time/60))
+ const [sec,setsec]=useState(time%60)
+ function calculatetime(hour,minute,second) {
+  const totalTime=(parseInt(hour)*3600)+(parseInt(minute)*60)+(parseInt(second))
+  setTime(totalTime)
+  console.log(time)
+  
+ }
+  const handleChange=(e,unit)=>{
+    if (unit == "hr") {
+      sethr(e.target.value)
+      calculatetime(e.target.value,min,sec)
+      
+    } else if(unit == "min") {
+      setmin(e.target.value)
+      calculatetime(hr,e.target.value,sec)
+    }else{
+      setsec(e.target.value)
+      calculatetime(hr,min,e.target.value)
+    }
   }
 return(<>
-  <input type="number" onChange={handleChange} value={timecon}  className={'timeInput timeUnit'} />
+  <input type="number" maxLength={2} onChange={e=>{handleChange(e,"hr")}} value={hr} className={'timeInput timeUnit'} /><span className='colon'>:</span>
+  <input type="number" maxLength={2} onChange={e=>{handleChange(e,"min")}} value={min}  className={'timeInput timeUnit'} /><span className='colon'>:</span>
+  <input type="number" maxLength={2} onChange={e=>{handleChange(e,"sec")}}  value={sec} className={'timeInput timeUnit'} />
   </>
 )
 
@@ -59,19 +77,22 @@ function Button() {
   const {isRunning,setisRunning}=useContext(shownum)
   function start() {
     if (!isRunning) {
+      console.log("issatrt")
       setisRunning(c=>c=true)
+      console.log(isRunning)
     }
     
   }
   function pause() {
     if (isRunning) {
       setisRunning(c=>c=false)
+      console.log(isRunning)
     }
     
   }
   return(<>
-    <button onClick={pause} style={{marginRight:"10px",padding:"10px 60px"}} className='actionButton'>Pause</button>
-    <button  onClick={start} style={{marginRight:"10px",padding:"10px 60px"}} className='actionButton'>Start</button>
+    <button onClick={pause} style={{marginTop:"10px",marginRight:"10px",padding:"10px 60px"}} className='actionButton'>Pause</button>
+    <button  onClick={start} style={{marginTop:"10px",marginRight:"10px",padding:"10px 60px"}} className='actionButton'>Start</button>
     
     </>
   )
