@@ -35,7 +35,7 @@ const sec = time % 60;
         seteditState(r=>r=true)
       }
       
-    return<div onClick={editable} className="timerTime">
+    return<div onClick={editable} className=" timerTime">
     {`${ hr.toString().padStart(2,"0") }:${ min.toString().padStart(2,"0") }:${sec.toString().padStart(2,"0")}`}
   </div>
 }

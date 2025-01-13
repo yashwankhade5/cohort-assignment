@@ -14,8 +14,8 @@ const Ti = () => {
 }
 function Timer() {
   const {editState,seteditState}=useContext(shownum)
-  return (
-    <div className='timerApp'>
+  return (<div >
+    <div className='timerApp '>
       
      {!editState && <TimerDisplay/>}
       
@@ -23,7 +23,7 @@ function Timer() {
       <Button/>
       
       
-    </div>
+    </div></div>
   )
 }
 
