@@ -1,14 +1,18 @@
-import React,{useState,useContext, useEffect, useRef} from 'react'
+import React,{useContext, useEffect, useRef} from 'react'
 import  "./Ti";
 import  "./Timerstyle.css";
-import {shownum,ShowProvider} from "./Context"
-import { createContext } from 'react';
+import 'react-circular-progressbar/dist/styles.css';
+import {shownum} from "./Context"
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+
 
 export function TimerDisplay() {
     const {time,setTime,isRunning,setisRunning,seteditState}=useContext(shownum)
     const hr = Math.floor(time / 3600);
 const min = Math.floor((time % 3600) / 60);
 const sec = time % 60;
+const initialtime=useRef(time)
+
     
       const intervalId=useRef(0)
       useEffect(()=>{
@@ -35,9 +39,9 @@ const sec = time % 60;
         seteditState(r=>r=true)
       }
       
-    return<div onClick={editable} className=" timerTime">
+    return<CircularProgressbarWithChildren value={(time/initialtime.current)*100}><div onClick={editable} className=" timerTime">
     {`${ hr.toString().padStart(2,"0") }:${ min.toString().padStart(2,"0") }:${sec.toString().padStart(2,"0")}`}
-  </div>
+  </div></CircularProgressbarWithChildren>
 }
 
 

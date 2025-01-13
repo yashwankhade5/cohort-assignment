@@ -2,6 +2,7 @@ import React,{useState,useContext, useEffect, useRef} from 'react'
 import {shownum,ShowProvider} from "./Context"
 import { TimerDisplay } from "./TimerDisplay";
 import  "./Timerstyle.css";
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 
 
 
@@ -15,7 +16,7 @@ const Ti = () => {
 function Timer() {
   const {editState,seteditState}=useContext(shownum)
   return (<div >
-    <div className='timerApp '>
+    <div className='timerApp'>
       
      {!editState && <TimerDisplay/>}
       
