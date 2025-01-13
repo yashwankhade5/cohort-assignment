@@ -13,6 +13,7 @@ const Ti = () => {
   
 }
 function Timer() {
+  const {editState}=useContext(shownum)
   return (
     <div className='timerApp'>
       

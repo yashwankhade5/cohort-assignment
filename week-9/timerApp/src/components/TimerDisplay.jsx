@@ -6,9 +6,9 @@ import { createContext } from 'react';
 
 export function TimerDisplay() {
     const {time,setTime,isRunning,setisRunning}=useContext(shownum)
-    const hr = time/3600
-    const min=(time%3600)/60
-    const sec=time%60
+    const hr = Math.floor(time / 3600);
+const min = Math.floor((time % 3600) / 60);
+const sec = time % 60;
     
       const intervalId=useRef(0)
       useEffect(()=>{
@@ -32,11 +32,9 @@ export function TimerDisplay() {
     
       },[isRunning,time])
       
-    return<div className='timerDisplay'>
-        <span >{hr}</span>
-        <span >{min}</span>
-        <span>{sec}</span>
-    </div>
+    return<div className="timerDisplay">
+    {`${hr > 0 ? hr : 0}:${min > 0 ? min : 0}:${sec > 0 ? sec : 0}`}
+  </div>
 }
 
 
