@@ -39,7 +39,7 @@ const initialtime=useRef(time)
         seteditState(r=>r=true)
       }
       
-    return<CircularProgressbarWithChildren value={(time/initialtime.current)*100}><div onClick={editable} className=" timerTime">
+    return<CircularProgressbarWithChildren value={(time/initialtime.current)*100}><div onClick={editable} style={{padding:"10px"}} className=" timerTime">
     {`${ hr.toString().padStart(2,"0") }:${ min.toString().padStart(2,"0") }:${sec.toString().padStart(2,"0")}`}
   </div></CircularProgressbarWithChildren>
 }

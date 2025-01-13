@@ -3,7 +3,7 @@ import {shownum,ShowProvider} from "./Context"
 import { TimerDisplay } from "./TimerDisplay";
 import  "./Timerstyle.css";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
-
+import { PauseButton,Reset } from "./PauseButton";
 
 
 
@@ -22,6 +22,8 @@ function Timer() {
       
      {editState && <InputValue/>}
       <Button/>
+      <PauseButton/>
+      <Reset/>
       
       
     </div></div>
@@ -35,7 +37,7 @@ function Button(){
     seteditState(r=>r=false)
   
   }
-  return<button onClick={start}>Start</button>
+  return<button style={{margin:"10px 20px",padding:"10px 35px"}} className='actionButton' onClick={start}>Start</button>
 }
 
 function InputValue(){
