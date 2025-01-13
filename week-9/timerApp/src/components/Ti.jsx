@@ -7,16 +7,21 @@ import  "./Timerstyle.css";
 
 
 const Ti = () => {
+  return<ShowProvider>
+    <Timer/>
+  </ShowProvider>
   
+}
+function Timer() {
   return (
     <div className='timerApp'>
-      <ShowProvider>
+      
       <TimerDisplay/>
       
       {<InputValue/>}
       <Button/>
       
-      </ShowProvider>
+      
     </div>
   )
 }
