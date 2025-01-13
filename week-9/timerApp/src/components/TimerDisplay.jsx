@@ -32,8 +32,8 @@ const sec = time % 60;
     
       },[isRunning,time])
       
-    return<div className="timerDisplay">
-    {`${hr > 0 ? hr : 0}:${min > 0 ? min : 0}:${sec > 0 ? sec : 0}`}
+    return<div className="timerTime">
+    {`${ hr.toString().padStart(2,"0") }:${ min.toString().padStart(2,"0") }:${sec.toString().padStart(2,"0")}`}
   </div>
 }
 

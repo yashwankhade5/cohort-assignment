@@ -13,13 +13,13 @@ const Ti = () => {
   
 }
 function Timer() {
-  const {editState}=useContext(shownum)
+  const {editState,seteditState}=useContext(shownum)
   return (
     <div className='timerApp'>
       
-      <TimerDisplay/>
+     {!editState && <TimerDisplay/>}
       
-      {<InputValue/>}
+     {editState && <InputValue/>}
       <Button/>
       
       
@@ -28,9 +28,11 @@ function Timer() {
 }
 
 function Button(){
-  const {setisRunning}=useContext(shownum)
+  const {setisRunning,seteditState}=useContext(shownum)
   function start() {
     setisRunning(r=>r=true)
+    seteditState(r=>r=false)
+  
   }
   return<button onClick={start}>Start</button>
 }
