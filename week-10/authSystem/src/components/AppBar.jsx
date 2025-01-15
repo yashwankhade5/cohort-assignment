@@ -11,7 +11,7 @@ const AppBar = () => {
 
 
 function Login() {
-  return<button style={{width:"70px",height:"40px", margin:"10px 20px",borderRadius:"5px",color:'blue'}}>Login</button>
+  return<button style={{width:"70px",height:"40px", margin:"10px 20px",borderRadius:"5px",color:'blue',border:"none"}}>Login</button>
   
 }
 export default AppBar
