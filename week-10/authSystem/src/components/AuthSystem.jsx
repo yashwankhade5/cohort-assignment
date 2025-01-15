@@ -9,7 +9,7 @@ const AuthSystem = () => {
   
   return (
     <div>
-    <AppBar LoggedIn={LoggedIn} username={username}/>
+    <AppBar LoggedIn={LoggedIn} username={username} setUsername={setUsername} setLoggedIn={setLoggedIn} />
     {LoggedIn && <Home/>}
     {!LoggedIn && <Login setUsername={setUsername} setLoggedIn={setLoggedIn}/>}
     </div>
