@@ -1,8 +1,12 @@
 import React from 'react'
+import AppBar from './AppBar';
+import Home from "./Home"; 
 
 const AuthSystem = () => {
   return (
-    <div>AuthSystem</div>
+    <div><AppBar/>
+    <Home/>
+    </div>
   )
 }
 
