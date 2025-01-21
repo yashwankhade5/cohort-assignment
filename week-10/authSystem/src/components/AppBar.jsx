@@ -26,9 +26,15 @@ function Show({Log,user,setuser,setlog}) {
     setuser("")
     setlog(false)
   }
+  function logouthandle(){
+contextValue.setUsername("")
+contextValue.setLoggedIn(false)
 
-  return<div>{contextValue ? <div style={{margin:"15px 10px"}}>{Log ? <span>{user}<button onClick={logout} style={{padding:"5px 10px",margin:"0px 10px",borderRadius:"7px"}}>Log Out</button></span>:"Not logged in"}
-  </div>:<div style={{margin:"15px 10px"}}>{contextValue.LoggedIn ? <span>{contextValue.user}<button onClick={logout} style={{padding:"5px 10px",margin:"0px 10px",borderRadius:"7px"}}>Log Out</button></span>:"Not logged in"}
+  }
+  
+
+  return<div>{contextValue ? <div style={{margin:"15px 10px"}}>{contextValue.LoggedIn ? <span>{contextValue.username}<button onClick={logouthandle} style={{padding:"5px 10px",margin:"0px 10px",borderRadius:"7px"}}>Log Out</button></span>:"Not logged in"}
+  </div>:<div style={{margin:"15px 10px"}}>{Log ? <span>{user}<button onClick={logout} style={{padding:"5px 10px",margin:"0px 10px",borderRadius:"7px"}}>Log Out</button></span>:"Not logged in"}
   </div>}</div>
 }
 export default AppBar
