@@ -31,9 +31,12 @@ function AuthSystem() {
   const [username,setUsername]=useState("")
     const [LoggedIn,setLoggedIn]=useState(false)
     const [context,setcontext]=useState(true)
-    return( <provid.Provider value={{username,setUsername,LoggedIn,setLoggedIn,setcontext,context}}>
+
+    const contextValue = context ? { username, LoggedIn,setUsername,setLoggedIn,setcontext,context } : undefined;
+
+    return( <provid.Provider value={contextValue}>
       <div>
-        <AppBar LoggedIn={LoggedIn} username={username} setUsername={setUsername} setLoggedIn={setLoggedIn} />
+        {!context ? <AppBar Log={LoggedIn} user={username} setUser={setUsername} setLog={setLoggedIn} />:<AppBar/>}
         {!context ? <Contextbar v={context} setcon={setcontext} />:<Contextbar/>}
         {LoggedIn && <Home/>}
         {(!context && !LoggedIn) ? <Login setUser={setUsername} setLog={setLoggedIn}/>:""}

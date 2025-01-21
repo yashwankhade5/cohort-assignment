@@ -2,11 +2,11 @@ import React, { useContext, useRef } from 'react'
 import {provid} from "./AuthSystem";
 
 const Login = ({setUser,setLog}) => {
-  const {setUsername,setLoggedIn,context}=useContext(provid)
+  const contextValue=useContext(provid)
   const inputvalue=useRef()
   function handlechange() {
-    setLoggedIn(true)
-    setUsername(inputvalue.current.value)
+    contextValue.setLoggedIn(true)
+    contextValue.setUsername(inputvalue.current.value)
     inputvalue.current.value=""
   }
   function handle() {
@@ -18,7 +18,7 @@ const Login = ({setUser,setLog}) => {
   return (
     <div style={{display:"flex",justifyContent:"center",margin:"80px 0px",flexDirection:"row"}}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}><input ref={inputvalue} type="text" id="user" name="user1"/>
-      {context ? <button style={{margin:"10px 10px",padding:"5px 20px",borderRadius:"7px"}} onClick={handlechange}>Login</button>:
+      {contextValue ? <button style={{margin:"10px 10px",padding:"5px 20px",borderRadius:"7px"}} onClick={handlechange}>Login</button>:
       <button style={{margin:"10px 10px",padding:"5px 20px",borderRadius:"7px"}} onClick={handle}>Login</button>}
       </div>
     </div>
