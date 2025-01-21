@@ -15,7 +15,7 @@ const AppBar = ({LoggedIn,username,setUsername,setLoggedIn}) => {
 
 function Show({Logged,user,setuser,setlog}) {
   function logout(){
-   
+   console.log(Logged)
     setuser("")
     setlog(false)
   }
