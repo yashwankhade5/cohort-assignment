@@ -12,9 +12,15 @@ const RandomUser = () => {
 
   },[])
 
-  return (<div>
+  return (<div style={{margin:"10px 60px"}}>
     <div style={{margin:"50px 10px",fontWeight:"bold",fontSize:"35px",textAlign:"center"}}>RandomUser</div>
-    <div style={{display:"flex", gap:"30px"}}>
+    <div style={{display:"flex",flexWrap:"wrap", gap:"30px",justifyContent:"center"}}>
+<Card/>
+<Card/>
+<Card/>
+<Card/>
+<Card/>
+<Card/>
 <Card/>
 <Card/>
 <Card/>
@@ -25,9 +31,9 @@ const RandomUser = () => {
 }
 
 function Card() {
-  return<div style={{borderRadius:"5px",border:"0.5px solid black",width:"100px"}}>
-<img src="https://randomuser.me/api/portraits/med/women/70.jpg" alt="" />
-<span>Cristina</span>
+  return<div style={{borderRadius:"5px",border:"0.8px solid #ddd",width:"200px",height:"200px"}}>
+<img style={{borderRadius:"50%",margin:"30px 64px"}} src="https://randomuser.me/api/portraits/med/women/70.jpg" alt="" />
+<div style={{textAlign:'center',fontSize:"20px",fontWeight:"550"}}>Cristina</div>
   </div>
 }
 
