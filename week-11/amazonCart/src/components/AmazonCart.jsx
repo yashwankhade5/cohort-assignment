@@ -4,7 +4,7 @@ import { useState } from "react";
     return<div className="  flex ">
         
         <div className=" mt-7 w-300">
-        <div className="rounded-t-lg bg-white py-4 px-6">Shopping Cart</div>
+        <div className="rounded-t-lg text-2xl bg-white py-4 font-bold px-6">Shopping Cart</div>
         <div className="bg-white rounded-b-lg"><Items/>
         <Items/>
         <Items/>
@@ -34,10 +34,10 @@ function sub() {
 }
 
     return<div className="pb-4"><div className="flex px-5  ">
-      <div className="mr-7"><img className="w-25 h-23 border-2 " src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" srcset="" /></div>
-      <div className="w-full"><div>The Art of Impossible: A Peak Performance Primer</div>
+      <div className="mr-7"><img className="w-25 h-23  " src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" srcset="" /></div>
+      <div className="w-full font-bold"><div>The Art of Impossible: A Peak Performance Primer</div>
       <div className="flex justify-between pt-2"><div className="text-green-600  font-medium">In stock</div><div></div>₹369.00</div>
-      <div className="flex relative top-3"><button className="bg-gray-400 w-6 items-center mx-2  text-white text-center flex justify-center" onClick={sub}>-</button><div>{quant}</div><button className="bg-[#f2f2f2] w-6 items-center mx-2  text-white text-center flex justify-center"  onClick={add}>+</button> <div className="text-blue-600 font-[500]">Delete</div></div>
+      <div className="flex relative top-3"><button className="bg-gray-400 w-6 items-center mx-2  text-white text-center flex justify-center" onClick={sub}>-</button><div className="font-normal">{quant}</div><button className="bg-[#f2f2f2] w-6 items-center mx-2  text-white text-center flex justify-center"  onClick={add}>+</button> <div className="text-blue-600 font-[500] ml-2">Delete</div></div>
       
       </div>
       
