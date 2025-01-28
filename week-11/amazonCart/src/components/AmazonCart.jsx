@@ -11,8 +11,13 @@ import { useState } from "react";
          </div>
       
     </div>
-        <div className="rounded-md bg-white mt-7 w-79 h-54 ml-4   ">
-        to
+        <div className="rounded-md bg-white mt-7 w-79 h-54 ml-4  p-8 ">
+            <div className="border-2 h-full ">
+                <div>Order Summary</div>
+                <div className="flex justify-between"><span>items</span><span>₹2473.00</span></div>
+
+        </div>
+        
     </div>
     </div>
 }
@@ -37,11 +42,11 @@ function sub() {
       <div className="mr-7"><img className="w-25 h-23  " src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" srcset="" /></div>
       <div className="w-full font-bold"><div>The Art of Impossible: A Peak Performance Primer</div>
       <div className="flex justify-between pt-2"><div className="text-green-600  font-medium">In stock</div><div></div>₹369.00</div>
-      <div className="flex relative top-3"><button className="bg-gray-400 w-6 items-center mx-2  text-white text-center flex justify-center" onClick={sub}>-</button><div className="font-normal">{quant}</div><button className="bg-[#f2f2f2] w-6 items-center mx-2  text-white text-center flex justify-center"  onClick={add}>+</button> <div className="text-blue-600 font-[500] ml-2">Delete</div></div>
+      <div className="flex relative top-3"><button className="bg-gray-400 w-6 items-center   text-white text-center flex justify-center" onClick={sub}>-</button><div className="font-normal ml-2">{quant}</div><button className="bg-[#f2f2f2] w-6 items-center mx-2  text-white text-center flex justify-center"  onClick={add}>+</button> <div className="text-blue-600 font-[500] ml-2">Delete</div></div>
       
       </div>
       
-    </div><div className="pt-6"><hr className="w-19/20 ml-5   color text-gray-300 " /></div></div>
+    </div><div className="pt-4"><hr className="w-19/20 ml-5   color text-gray-300 " /></div></div>
 }
 
 
