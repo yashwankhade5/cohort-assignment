@@ -11,10 +11,13 @@ import { useState } from "react";
          </div>
       
     </div>
-        <div className="rounded-md bg-white mt-7 w-79 h-54 ml-4  p-8 ">
-            <div className="border-2 h-full ">
-                <div>Order Summary</div>
+        <div className="rounded-md bg-white mt-7 w-79 h-54 ml-4  p-5 ">
+            <div className=" h-full ">
+                <div className="py-2">Order Summary</div>
                 <div className="flex justify-between"><span>items</span><span>₹2473.00</span></div>
+                <div className="pt-4"><hr className="w-20/20    color text-gray-300 " /></div>
+                <div className="flex justify-between"><span>Order Total:</span><span>₹2473.00</span></div>
+                <div>Proceed to buy</div>
 
         </div>
         
