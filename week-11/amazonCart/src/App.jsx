@@ -21,7 +21,7 @@ function App() {
   )
 }
 function Layout() {
-  return<div className='bg-[#f2f2f2] h-screen '>
+  return<div className='bg-[#f2f2f2] min-h-screen pb-10 '>
 <Navbar/>
 <Outlet/>
   </div>
