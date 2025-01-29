@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AmazonsCart,Navbar } from "./components";
 import { BrowserRouter, Link, Outlet,Routes,Route } from "react-router-dom";
 import './App.css'
+import { Purchase } from "./components/AmazonCart";
 
 function App() {
  
@@ -21,7 +22,7 @@ function App() {
   )
 }
 function Layout() {
-  return<div className='bg-[#f2f2f2] min-h-screen pb-10 '>
+  return<div className='bg-[#f2f2f2]  min-h-screen pb-10 '>
 <Navbar/>
 <Outlet/>
   </div>
