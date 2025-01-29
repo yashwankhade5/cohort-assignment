@@ -3,7 +3,8 @@ import { AmazonsCart,Navbar } from "./components";
 import { BrowserRouter, Link, Outlet,Routes,Route } from "react-router-dom";
 import './App.css'
 import { Purchase } from "./components/AmazonCart";
-
+import {} from "./store/cartItemsState"
+import { RecoilRoot } from 'recoil';
 function App() {
  
 
@@ -22,10 +23,10 @@ function App() {
   )
 }
 function Layout() {
-  return<div className='bg-[#f2f2f2]  min-h-screen pb-10 '>
+  return<RecoilRoot><div className='bg-[#f2f2f2]  min-h-screen pb-10 '>
 <Navbar/>
 <Outlet/>
-  </div>
+  </div></RecoilRoot>
 }
 
 function NotFound() {

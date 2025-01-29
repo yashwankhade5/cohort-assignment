@@ -6,7 +6,7 @@ function AmazonsCart() {
     const [cart, setcart] = useState(datastore)
     const [ purchaseshow,setpurchaseshow]=useState(false)
     function purchaseBoxShow() {
-        setpurchaseshow(!c)
+        setpurchaseshow(c=>!c)
     }
     let post = cart.map((e, index) => <Items id={index} key={index} info={e} setcart={setcart} cart={cart} />)
     return <RecoilRoot><div className="  flex ">{purchaseshow && <Purchase show={purchaseBoxShow}/>}
@@ -70,7 +70,7 @@ function OrderSum({show}) {
             <div className="pt-4"><hr className="w-20/20    color text-gray-300 " /></div>
             <div className="flex justify-between py-3"><span>Order Total:</span><span>₹ {Math.round(numitem.totalprice)}</span></div>
             <div className="bg-yellow-400 font-medium my-1 flex justify-center py-2" onClick={()=>{
-                show
+                show()
             }}>Proceed to buy</div>
 
         </div>
