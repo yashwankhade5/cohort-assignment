@@ -9,7 +9,7 @@ function AmazonsCart() {
         setpurchaseshow(c=>!c)
     }
     let post = cart.map((e, index) => <Items id={index} key={index} info={e} setcart={setcart} cart={cart} />)
-    return <RecoilRoot><div className="  flex ">{purchaseshow && <Purchase show={purchaseBoxShow}/>}
+    return <div className="  flex ">{purchaseshow && <Purchase show={purchaseBoxShow}/>}
         <div className=" mt-7 w-300">
             <div className="rounded-t-lg text-2xl bg-white py-4 font-bold px-6">Shopping Cart</div>
             <div className="bg-white rounded-b-lg">
@@ -17,7 +17,7 @@ function AmazonsCart() {
             </div>
         </div>
         <OrderSum show={purchaseBoxShow} />
-    </div></RecoilRoot>
+    </div>
 }
 
 
@@ -84,8 +84,8 @@ export function Purchase({show}) {
 
     </div><div className=" bg-white rounded-md h-88 w-100 absolute top-40 right-2/6 z-10 ">
             <div className="p-8"> <div className="font-bold text-2xl">Purchase Sucessful</div><div className="px-28 py-5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="green" class="size-18">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="green" className="size-18">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
 
             </div>

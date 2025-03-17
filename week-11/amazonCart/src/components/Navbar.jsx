@@ -1,11 +1,16 @@
 import { BrowserRouter, Link } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
 import { useState } from "react";
 import { totalorder,totalgoods} from "../store/cartItemsState";
 
 function Navbar() {
   const [v, s] = useState(true);
-  const items = useRecoilValue(totalorder); // This will give the total order state
+  const [items,seti] = useRecoilState(totalorder); // This will give the total order state
+  function add() {
+    seti(items=>({...items,totalitem:items.totalitem+1}))
+    console.log(items)
+    
+  }
  
   return (
     <div className="bg-[#232f3e] py-3 flex justify-between px-10">
@@ -38,6 +43,7 @@ function Navbar() {
             {items.totalitem} {/* Displaying the total items here */}
           </div>
         </span>
+       
       </span>
       
     </div>

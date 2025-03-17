@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mongoose": "^8.12.1",
+    "typescript": "^5.8.2"
+  },
+  "name": "week-14",
+  "version": "1.0.0",
+  "description": "Your task is to convert course selling application into typescript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
